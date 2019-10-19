@@ -4,6 +4,8 @@ import * as nunjucks from 'nunjucks';
 import {NestFactory} from '@nestjs/core';
 import {NestExpressApplication} from '@nestjs/platform-express';
 import {AppModule} from '@src/AppModule';
+import * as env from 'dotenv';
+env.config();
 
 async function bootstrap()
 {
@@ -31,7 +33,10 @@ async function bootstrap()
 	app.setViewEngine('nunjucks');
 	app.set('view cache', true);
 
-	await app.listen(3000);
+	const port = process.env.PORT || 3000;
+	await app.listen(port);
+	// tslint:disable-next-line:no-console
+	console.log(`Zeus ⚡ listening on port ${port}`);
 }
 
 bootstrap();
