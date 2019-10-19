@@ -13,9 +13,10 @@ Next-gen god-like app.
 ```bash
 yarn install
 cp ormconfig.example.json ormconfig.json
+cp example.env .env
 ```
 
-And then fill your ormconfig.json with database credentials.
+Fill your ormconfig.json with database credentials and .env with configuration details
 
 ## Running the app
 
