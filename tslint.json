@@ -1,0 +1,22 @@
+{
+	"extends": "tslint:recommended",
+	"rules": {
+		"max-line-length": {
+			"options": [200]
+		},
+		"indent": [true, "tabs", 4],
+		"quotemark": [true, "single", "avoid-escape", "avoid-template"],
+		"ordered-imports": false,
+		"one-line": [true, "check-catch", "check-finally", "check-else"],
+		"object-literal-sort-keys": false,
+		"new-parens": true,
+		"no-arg": true,
+		"no-bitwise": true,
+		"no-conditional-assignment": true,
+		"no-consecutive-blank-lines": false,
+		"no-console": {
+			"severity": "warning",
+			"options": ["debug", "info", "log", "time", "timeEnd", "trace"]
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{%extends '../@layout.nunjucks'%}
+
+{%block content%}
+
+<h1>Zeus</h1>
+
+{%endblock%}

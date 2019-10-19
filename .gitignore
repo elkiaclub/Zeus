@@ -1,0 +1,8 @@
+# IDE stuff
+.idea
+
+# project stuff
+/dist
+/public/assets/dist
+node_modules
+ormconfig.json

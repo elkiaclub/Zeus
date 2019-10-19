@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Zeus &middot; Elkia</title>
+
+	<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+
+{%block content%}
+No content
+{%endblock%}
+
+<script src="assets/app.js"></script>
+
+</body>
+</html>
