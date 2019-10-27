@@ -4,6 +4,9 @@ import * as nunjucks from 'nunjucks';
 import {NestFactory} from '@nestjs/core';
 import {NestExpressApplication} from '@nestjs/platform-express';
 import {AppModule} from '@src/AppModule';
+import * as session from 'express-session';
+import flash = require('connect-flash');
+import config from '@src/Config/config';
 
 async function bootstrap()
 {
@@ -31,7 +34,17 @@ async function bootstrap()
 	app.setViewEngine('nunjucks');
 	app.set('view cache', true);
 
-	await app.listen(3000);
+	app.use(session({
+		secret: config.session.secret,
+		resave: false,
+		saveUninitialized: false,
+		cookie: {
+			secure: config.session.secureCookie,
+		},
+	}));
+	app.use(flash());
+
+	await app.listen(config.server.port);
 }
 
 bootstrap();

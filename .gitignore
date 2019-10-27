@@ -5,4 +5,4 @@
 /dist
 /public/assets/dist
 node_modules
-ormconfig.json
+src/Config/config.ts

@@ -1,4 +1,4 @@
-import {Entity, PrimaryGeneratedColumn} from 'typeorm';
+import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
 
 @Entity()
 export class User
@@ -6,5 +6,17 @@ export class User
 
 	@PrimaryGeneratedColumn()
 	public id: number;
+
+	@Column({unique: true})
+	public discordId: string;
+
+	@Column()
+	public displayName: string;
+
+	@Column()
+	public discordTag: string;
+
+	@Column()
+	public minecraftId?: string;
 
 }

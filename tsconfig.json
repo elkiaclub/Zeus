@@ -15,6 +15,7 @@
 		}
 	},
 	"exclude": [
+		"src/Config/config.example.ts",
 		"node_modules",
 		"dist"
 	]

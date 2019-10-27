@@ -12,10 +12,10 @@ Next-gen god-like app.
 
 ```bash
 yarn install
-cp ormconfig.example.json ormconfig.json
+cp src/Config/config.example.ts src/Config/config.ts
 ```
 
-And then fill your ormconfig.json with database credentials.
+Then fill the `src/Config/config.ts` file with your configuration.
 
 ## Running the app
 
@@ -24,7 +24,7 @@ yarn build
 yarn start
 ```
 
-App will be available at http://localhost:3000
+App will be available at `http://localhost:port` based on the port you fill in `config.ts`.
 
 ## Development
 

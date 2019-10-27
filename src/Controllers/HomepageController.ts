@@ -1,4 +1,5 @@
-import {Controller, Get, Render} from '@nestjs/common';
+import {Controller, Get, Render, Req} from '@nestjs/common';
+import {Request} from 'express';
 
 @Controller()
 export class HomepageController
@@ -6,9 +7,11 @@ export class HomepageController
 
 	@Get()
 	@Render('Public/homepage')
-	public getHello()
+	public actionHomepage(@Req() request: Request)
 	{
-		return {};
+		return {
+			user: request.session.user,
+		};
 	}
 
 }
