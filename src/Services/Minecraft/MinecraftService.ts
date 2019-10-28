@@ -22,7 +22,7 @@ export class MinecraftService {
 		schedule.scheduleJob('*/10 * * * * *', async () => {
 			this.queryRunner();
 		});
-	};
+	}
 
 	private queryRunner = async () => {
 		// get servers
@@ -37,7 +37,7 @@ export class MinecraftService {
 				this.queryServer(queryOptions);
 			}
 		}
-	};
+	}
 
 	private queryServer = async (queryOptions: IQueryOptions) => {
 		const queryResult = await Gamedig.query(queryOptions);
@@ -56,5 +56,5 @@ export class MinecraftService {
 			// todo
 		}
 
-	};
+	}
 }

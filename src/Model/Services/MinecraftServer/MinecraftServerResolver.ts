@@ -21,7 +21,7 @@ export class MinecraftServerResolver {
 			.createQueryBuilder()
 			.select('server')
 			.from(MinecraftServer, 'server')
-			.where('id = :id', { id })
+			.where('id = :id', { id: id })
 			.getOne();
 	}
 

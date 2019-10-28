@@ -24,9 +24,9 @@ export class MinecraftPlayerResolver {
 				.createQueryBuilder()
 				.select('player')
 				.from(MinecraftPlayer, 'player')
-				.where('player.id = :id', { id } )
-				.orWhere('player.uuid = :uuid', { uuid })
-				.orWhere('player.ign = :ign',  { ign })
+				.where('player.id = :id', { id: id } )
+				.orWhere('player.uuid = :uuid', { uuid: uuid })
+				.orWhere('player.ign = :ign',  { ign: ign })
 				.getOne();
 		}
 		return false;
