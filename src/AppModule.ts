@@ -1,10 +1,15 @@
 import {Module} from '@nestjs/common';
 import {TypeOrmModule} from '@nestjs/typeorm';
 import {WebModule} from '@src/Modules/WebModule';
+import config from '@src/Config/config';
 
 @Module({
 	imports: [
-		TypeOrmModule.forRoot(),
+		TypeOrmModule.forRootAsync({
+			useFactory: () => {
+				return config.database;
+			},
+		}),
 		WebModule,
 	],
 	controllers: [],
