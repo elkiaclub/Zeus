@@ -4,8 +4,9 @@ import * as nunjucks from 'nunjucks';
 import {NestFactory} from '@nestjs/core';
 import {NestExpressApplication} from '@nestjs/platform-express';
 import {AppModule} from '@src/AppModule';
-import * as env from 'dotenv';
-env.config();
+import * as session from 'express-session';
+import flash = require('connect-flash');
+import config from '@src/Config/config';
 
 async function bootstrap()
 {
@@ -33,10 +34,17 @@ async function bootstrap()
 	app.setViewEngine('nunjucks');
 	app.set('view cache', true);
 
-	const port = process.env.PORT || 3000;
-	await app.listen(port);
-	// tslint:disable-next-line:no-console
-	console.log(`Zeus ⚡ listening on port ${port}`);
+	app.use(session({
+		secret: config.session.secret,
+		resave: false,
+		saveUninitialized: false,
+		cookie: {
+			secure: config.session.secureCookie,
+		},
+	}));
+	app.use(flash());
+
+	await app.listen(config.server.port);
 }
 
 bootstrap();

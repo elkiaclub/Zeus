@@ -6,4 +6,4 @@
 /public/assets/dist
 node_modules
 ormconfig.json
-.env
+src/Config/config.ts
