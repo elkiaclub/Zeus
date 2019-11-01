@@ -2,7 +2,7 @@ export interface IConfigSchema
 {
 
 	server: {
-		port: 3000;
+		port: number;
 	};
 	session: {
 		secureCookie: boolean;
